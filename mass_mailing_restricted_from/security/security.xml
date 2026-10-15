@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_restricted_mailing_sender" model="res.groups">
+        <field name="name">Email Marketing/Enviar a Enderezos Restrinxidos</field>
+        <field name="category_id" ref="base.module_category_marketing"/>
+    </record>
+</odoo>

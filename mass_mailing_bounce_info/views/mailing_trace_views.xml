@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mailing_trace_view_search_bounce_info" model="ir.ui.view">
+        <field name="name">mailing.trace.view.search.bounce.info</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_bounced']" position="after">
+                <separator/>
+                <filter string="Soft Bounce" name="filter_soft_bounce"
+                        domain="[('trace_status', '=', 'bounce'), ('bounce_type', '=', 'soft')]"/>
+                <filter string="Hard Bounce" name="filter_hard_bounce"
+                        domain="[('trace_status', '=', 'bounce'), ('bounce_type', '=', 'hard')]"/>
+                <filter string="Unclassified Bounce" name="filter_unclassified_bounce"
+                        domain="[('trace_status', '=', 'bounce'), ('bounce_type', '=', False)]"/>
+            </xpath>
+
+            <xpath expr="//search/group" position="inside">
+                <filter string="Bounce Type" name="group_bounce_type"
+                        context="{'group_by': 'bounce_type'}"/>
+                <filter string="Bounce Reason" name="group_bounce_reason"
+                        context="{'group_by': 'bounce_reason'}"/>
+                <filter string="SMTP Code" name="group_bounce_smtp_code"
+                        context="{'group_by': 'bounce_smtp_code'}"/>
+                <filter string="Enhanced Status Code" name="group_bounce_status_code"
+                        context="{'group_by': 'bounce_status_code'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mailing_trace_view_tree_mail_bounce_info" model="ir.ui.view">
+        <field name="name">mailing.trace.view.list.mail.bounce.info</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_tree_mail"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='failure_type']" position="after">
+                <field name="bounce_type" optional="show"/>
+                <field name="bounce_reason" optional="show"/>
+                <field name="bounce_smtp_code" optional="hide"/>
+                <field name="bounce_status_code" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mailing_trace_view_tree_bounce_info" model="ir.ui.view">
+        <field name="name">mailing.trace.view.list.bounce.info</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='failure_type']" position="after">
+                <field name="bounce_type" optional="show"/>
+                <field name="bounce_reason" optional="show"/>
+                <field name="bounce_smtp_code" optional="hide"/>
+                <field name="bounce_status_code" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mailing_trace_view_form_bounce_info" model="ir.ui.view">
+        <field name="name">mailing.trace.view.form.bounce.info</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='failure_reason']" position="after">
+                <field name="bounce_type" invisible="trace_status != 'bounce'"/>
+                <field name="bounce_reason" invisible="trace_status != 'bounce'"/>
+                <field name="bounce_smtp_code" invisible="trace_status != 'bounce'"/>
+                <field name="bounce_status_code" invisible="trace_status != 'bounce'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * mass_mailing_bounce_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "SMTP code"
+msgstr ""
+
+msgid "Enhanced status code"
+msgstr ""
+
+msgid "Bounce type"
+msgstr ""
+
+msgid "Bounce reason"
+msgstr ""
+
+msgid "Soft bounce"
+msgstr ""
+
+msgid "Hard bounce"
+msgstr ""
+
+msgid "Mailbox full"
+msgstr ""
+
+msgid "Mailbox disabled"
+msgstr ""
+
+msgid "Rate limit / throttling"
+msgstr ""
+
+msgid "Unknown recipient"
+msgstr ""
+
+msgid "Domain / DNS error"
+msgstr ""
+
+msgid "Spam / blocklist rejection"
+msgstr ""
+
+msgid "Content rejected"
+msgstr ""
+
+msgid "Temporary policy rejection"
+msgstr ""
+
+msgid "Policy rejection"
+msgstr ""
+
+msgid "Server / connection unavailable"
+msgstr ""
+
+msgid "Other temporary failure"
+msgstr ""
+
+msgid "Other permanent failure"
+msgstr ""
+
+msgid "Other / unknown"
+msgstr ""
+
+msgid "Soft Bounce"
+msgstr ""
+
+msgid "Hard Bounce"
+msgstr ""
+
+msgid "Unclassified Bounce"
+msgstr ""
+
+msgid "Bounce Type"
+msgstr ""
+
+msgid "Bounce Reason"
+msgstr ""
+
+msgid "SMTP Code"
+msgstr ""
+
+msgid "Enhanced Status Code"
+msgstr ""

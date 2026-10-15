@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mailing_trace_view_tree_trace_resend" model="ir.ui.view">
+        <field name="name">mailing.trace.view.list.trace.resend</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='message_id']" position="after">
+                <field name="resend_origin_trace_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mailing_trace_view_tree_mail_trace_resend" model="ir.ui.view">
+        <field name="name">mailing.trace.view.list.mail.trace.resend</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_tree_mail"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='message_id']" position="after">
+                <field name="resend_origin_trace_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mailing_trace_view_form_trace_resend" model="ir.ui.view">
+        <field name="name">mailing.trace.view.form.trace.resend</field>
+        <field name="model">mailing.trace</field>
+        <field name="inherit_id" ref="mass_mailing.mailing_trace_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mass_mailing_id']" position="after">
+                <field name="resend_origin_trace_id"
+                       invisible="not resend_origin_trace_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

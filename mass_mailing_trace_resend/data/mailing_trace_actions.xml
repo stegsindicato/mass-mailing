@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_server_resend_selected_mailing_traces"
+            model="ir.actions.server">
+        <field name="name">Resend selected traces</field>
+        <field name="model_id" ref="mass_mailing.model_mailing_trace"/>
+        <field name="binding_model_id" ref="mass_mailing.model_mailing_trace"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_open_resend_wizard()</field>
+    </record>
+</odoo>
